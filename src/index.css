@@ -62,6 +62,9 @@ a {
   transition: all 0.3s ease;
 }
 
+.videoCard{
+  background-color: #1e1e1e !important;
+}
 @media screen and (max-width: 900px) {
   .category-btn{
     margin: 10px;
