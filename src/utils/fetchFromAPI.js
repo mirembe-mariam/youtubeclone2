@@ -7,7 +7,8 @@ const options = {
   url: BASE_URL,
   params: {
     part: 'snippet',
-    videoId: 'M7FIvfx5J10'
+    videoId: 'M7FIvfx5J10',
+    maxResults: 50,
     
   },
   headers: {
