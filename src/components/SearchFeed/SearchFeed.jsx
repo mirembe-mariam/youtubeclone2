@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box,Typography } from "@mui/material";
 import {Videos,} from "../"; /*we are already in the componnets folder*/
 import { fetchFromAPI } from "../../utils/fetchFromAPI";
 import { useParams } from "react-router-dom";
