@@ -13,16 +13,21 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then((data) =>
-      setVideoDetail(data.items[0]));
+    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then((data) => {
+      setVideoDetail(data.items[0]);
+    });
 
-      fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
-  .then((data) => setVideos(data.items));
-
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+      .then((data) => setVideos(data.items));
   }, [id]);
-   const { snippet: { title, channelId, channelTitle },statistics: { viewCount, likeCount } } = videoDetail;
 
-  if (!videoDetail?.snippet) return 'Loading...';
+  // Check if videoDetail is null or doesn't have the 'snippet' and 'statistics' properties
+  if (!videoDetail || !videoDetail.snippet || !videoDetail.statistics) {
+    return 'Loading...';
+  }
+
+  const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
+
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
