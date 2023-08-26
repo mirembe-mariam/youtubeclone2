@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  demoThumbnailUrl,
   demoVideoUrl,
   demoVideoTitle,
   demoChannelUrl,
@@ -18,12 +17,18 @@ const VideoCard = ({
 }) => {
   /*console.log(videoId, snippet)*/
   return (
-    <Card sx={{ width: { xs: '100%', sm: '358px', md: '320px',}, boxShadow: 'none', borderRadius: '0'}}>
+    <Card
+      sx={{
+        width: { xs: "100%", sm: "358px", md: "320px" },
+        boxShadow: "none",
+        borderRadius: "0",
+      }}
+    >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
-          sx={{ width:{xs: '100%', sm: '358px', md: '320px'}, height: 180 }}
+          sx={{ width: { xs: "100%", sm: "358px", md: "320px" }, height: 180 }}
         />
       </Link>
       {/* <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px'}}/>*/}
@@ -40,7 +45,7 @@ const VideoCard = ({
       >
         <Typography variant="subtitle1" fontWeight="bold" color="black">
           {snippet?.ChannelTitle || demoChannelTitle}
-          <CheckCircle sx={{ fontSize: 12, color: 'blue', ml: '5px'}}/>
+          <CheckCircle sx={{ fontSize: 12, color: "blue", ml: "5px" }} />
         </Typography>
       </Link>
     </Card>

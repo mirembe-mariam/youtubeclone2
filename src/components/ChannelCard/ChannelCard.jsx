@@ -1,23 +1,25 @@
 /*the channelimage is rendered if a selected category has a channel on youtube if it doesnt its not rendered*/
 import React from "react";
 import { Box, CardContent, CardMedia, Typography } from "@mui/material";
-import { Check, CheckCircle } from "@mui/icons-material";
+import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { demoProfilePicture } from "../../utils/constants";
 
-const ChannelCard = ({ channelDetail, marginTop}) => {
+const ChannelCard = ({ channelDetail, marginTop }) => {
   return (
-    <Box sx={{ boxShadow: "none",
-     borderRadius: "20px",
-     display: "flex",
-     justifyContent: "center",
-     alignItem: "center",
-     width: {xs: '356px', md: '320px'},
-     heigh: '326px',
-     margin: 'auto' ,
-     marginTop,
-     }}>
-
+    <Box
+      sx={{
+        boxShadow: "none",
+        borderRadius: "20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItem: "center",
+        width: { xs: "356px", md: "320px" },
+        heigh: "326px",
+        margin: "auto",
+        marginTop,
+      }}
+    >
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
